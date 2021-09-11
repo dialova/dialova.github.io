@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Project Dialova: Virtual Blind Date</title>
+  <meta content="The Best Virtual Blind Date" name="description">
+  <meta content="Virtual Blind Date" name="keywords">
+
+  <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Apispreadsheet File -->  
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"></script>
+    <script>
+      function SubForm (){
+        $.ajax({
+          url:"https://api.apispreadsheets.com/data/17791/",
+          type:"post",
+          data:$("#form-subscribe").serializeArray(),
+          success: function(){
+            // alert("Form Data Submitted :)")
+          },
+          error: function(){
+            alert("There was an error :(")
+          }
+        });
+      }
+    </script>
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex flex-column align-items-center">
+
+      <!-- <h1>DIALOVA</h1> -->
+      <h1><img src="assets/img/logo-fff.png"></h1>
+      <h2>Temukan Teman Baru, Sahabat, Jodoh Kamu Disini</h2>
+      <h3 class="text-center">Coming Soon: Virtual Blind Date </h3>
+      <div class="countdown d-flex justify-content-center" data-count="2021/10/10">
+        <div>
+          <h3>%D</h3>
+          <h4>Days</h4>
+        </div>
+        <div>
+          <h3>%H</h3>
+          <h4>Hours</h4>
+        </div>
+        <div>
+          <h3>%M</h3>
+          <h4>Minutes</h4>
+        </div>
+        <div>
+          <h3>%S</h3>
+          <h4>Seconds</h4>
+        </div>
+      </div>
+
+      <div class="subscribe">
+        <h4>Subscribe now, by leave your whatsapp number!</h4>
+        <form action="" method="post" role="form" id="form-subscribe" class="php-email-form" onsubmit="SubForm()">
+          <div class="subscribe-form">
+            <input type="tel" id="Whatsapps" name="Whatsapp" placeholder="e.g: 082137760669" data-toggle="tooltip" data-placement="bottom" title="Kami akan segera menghubungi anda apabila virtual blind date telah dibuka">
+            <input type="submit" value="Subscribe">
+          </div>
+          <div class="mt-2">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your notification request was sent. Thank you!</div>
+          </div>
+        </form>
+      </div>
+
+      <div class="social-links text-center">
+        <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
+        <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+        <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+      </div>
+
+    </div>
+  </header><!-- End #header -->
+
+  <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Dialogika</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/maundy-free-coming-soon-bootstrap-theme/ -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Maudy
+        </div>
+      </div>
+    </footer>
+  <!-- End #footer -->
+
+  <!-- ======= Modal ======= -->
+    <div class="modal fade" id="confirm" tabindex="-1" role="dialog" aria-labelledby="confirm" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered"  style="width: 22rem;" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Data Telah Kami Terima</h5>
+                <hr>
+                <p class="card-text">Kami Akan Segera Menghubungi Anda Apabila Virtual Blind Date Akan Segera Dibuka</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- End #modal -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/jquery-countdown/jquery.countdown.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script type="text/javascript">
+    $('#form-subscribe').on('submit', function(e){
+      $('#confirm').modal('show');
+      e.preventDefault();
+    });
+  </script>
+  <script type="text/javascript">
+    $('#Whatsapps').tooltip({ boundary: 'window' })
+  </script>
+
+</body>
+
+</html>
